@@ -9,6 +9,9 @@ class Hello extends \Http\Resource
 
     public function get()
     {
+        if (empty($this->name)) {
+            $this->lastModified = '2014-01-01 00:00:00';
+        }
         return $this;
     }
 
