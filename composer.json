@@ -1,0 +1,14 @@
+{
+    "name": "4d47/php-start",
+    "description": "The \\Http\\Resource starter kit",
+    "license": "MIT",
+    "require": {
+        "4d47/http-resource": "~2.0",
+        "rdlowrey/auryn": "~0.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
