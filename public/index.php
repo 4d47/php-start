@@ -13,7 +13,9 @@ $config = array_replace_recursive(require 'config-defaults.php', file_exists('co
 
 # wireup dependencies
 $injector = new Auryn\Provider();
-// $injector->define('PDO', array(':dsn' => $config['db']['dsn'], ':username' => $config['db']['username'], ':passwd' => $config['db']['password']));
+foreach ($config['definitions'] as $className => $params) {
+    $injector->define($className, $params);
+}
 
 # initialize locale
 // putenv('LC_ALL=' . $config['ui']['locale']);
