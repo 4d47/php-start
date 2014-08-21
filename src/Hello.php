@@ -10,26 +10,25 @@ class Hello extends \Http\Resource
     public function get()
     {
         if (empty($this->name)) {
-            $this->lastModified = '2014-01-01 00:00:00';
+            $this->lastModified = strtotime('2014-01-01 00:00:00');
         }
-        return $this;
     }
 
-    public function render($data)
+    public function render()
     {
         switch($this->format) {
         case 'json':
             header('Content-Type: application/json');
-            echo json_encode($data);
+            echo json_encode($this);
             break;
         case 'html-part':
             static::$layout = false;
-            parent::render($data);
+            parent::render();
             break;
         case 'html':
-            throw new \Http\MovedPermanently(static::link(array('name' => $this->name)));
+            throw new \Http\MovedPermanently(static::link($this->name));
         default:
-            parent::render($data);
+            parent::render();
         }
     }
 }
