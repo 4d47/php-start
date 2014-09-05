@@ -4,7 +4,7 @@
     "license": "MIT",
     "require": {
         "4d47/http-resource": "3.*@dev",
-        "rdlowrey/auryn": "~0.9"
+        "rdlowrey/auryn": "0.14.0"
     },
     "require-dev": {
         "phpunit/phpunit": "4.*"
