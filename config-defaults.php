@@ -2,7 +2,7 @@
 
 return
     array(
-        'controllers' =>
+        'resources' =>
             array(
                 'App\Hello',
             ),

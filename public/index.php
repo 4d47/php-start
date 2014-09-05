@@ -24,5 +24,5 @@ foreach ($config['definitions'] as $className => $params) {
 // textdomain('messages');
 
 # handle request
-\Http\Resource::handle($config['controllers'], array($injector, 'make'));
+\Http\Resource::handle($config['resources'], array($injector, 'make'));
 
